@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 import requests
 import json
 import pandas as pd
@@ -7,8 +13,6 @@ from dateutil.relativedelta import relativedelta
 import requests
 import dataframe_image as dfi
 import os
-import sys
-sys.stdout.reconfigure(encoding='utf-8')
 
 
 pd.options.mode.chained_assignment = None
