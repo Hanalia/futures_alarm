@@ -14,7 +14,7 @@ import os
 
 pd.options.mode.chained_assignment = None
 
-print(sys.getdefaultencoding)
+print(sys.getdefaultencoding())
 TELEGRAM_TOKEN = os.environ['TELEGRAM_TOKEN']
 MY_CHAT_ID = os.environ['MY_CHAT_ID']
 
