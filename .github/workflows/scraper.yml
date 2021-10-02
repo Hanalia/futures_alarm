@@ -1,10 +1,10 @@
 name: Python package
-on: push
-# on:
-#   schedule:
-#     # https://crontab.guru/#*/10_*_25-31_*_*
-#     # “At 08:00.”  ## at 6:pm everyday
-#     - cron:  '0 8 * * *'
+# on: push
+on:
+  schedule:
+    # https://crontab.guru/#*/10_*_25-31_*_*
+    # “At 08:00.”  ## at 6:pm everyday
+    - cron:  '0 8 * * *'
 
 jobs:
   build:
