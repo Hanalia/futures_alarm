@@ -29,6 +29,7 @@ jobs:
     - name: SetLocale
       run: |
         sudo apt-get update && sudo apt-get install -y language-pack-ko
+        sudo apt-get install fonts-nanum*
         sudo locale-gen ko_KR.UTF-8
         sudo update-locale LANG=ko_KR.UTF-8
     - name: Lint with flake8
