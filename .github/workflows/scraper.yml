@@ -3,10 +3,9 @@ on: push
 # on:
 #   schedule:
 #     # https://crontab.guru/#*/10_*_25-31_*_*
-#     # “At every 10th minute on every day-of-month from 25 through 31.”
-#     - cron:  '*/10 * 25-31 * *'
-env:
-  LANG: "ko_KR.UTF-8"
+#     # “At 08:00.”  ## at 6:pm everyday
+#     - cron:  '0 8 * * *'
+
 jobs:
   build:
 
@@ -26,12 +25,9 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: SetLocale
+    - name: Setfont
       run: |
-        sudo apt-get update && sudo apt-get install -y language-pack-ko
         sudo apt-get install fonts-nanum*
-        sudo locale-gen ko_KR.UTF-8
-        sudo update-locale LANG=ko_KR.UTF-8
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names

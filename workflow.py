@@ -34,7 +34,6 @@ def get_kospis(mydate:datetime):  # ouput is [kospi,kospi_200] in floats
   }
 
   today_str = mydate.strftime('%Y%m%d')
-  today_str = '20211001'
 
 
 
@@ -231,6 +230,8 @@ def sendImage():
     r= requests.post(url, files=files, data=data)
 
 # my main job -> 
+
+
 
 def main():
     today = datetime.now()
