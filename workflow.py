@@ -10,6 +10,7 @@ from dateutil.relativedelta import relativedelta
 import requests
 import dataframe_image as dfi
 import os
+import exchange_calendars as ecals 
 
 
 pd.options.mode.chained_assignment = None
@@ -231,13 +232,20 @@ def sendImage():
 
 # my main job -> 
 
-
-
+# real main
 def main():
-    today = datetime.now()
-    mydate = datetime(2021,10,1)
-    get_final_table(mydate)
+    XKRX = ecals.get_calendar("XKRX") # 한국 코드
+    if not (XKRX.is_session(datetime.now().strftime("%Y-%m-%d"))):
+        return  # 오늘 장이 아니면 return
+
+    get_final_table(datetime.now())
     sendImage()
+
+# def main():
+#     today = datetime.now()
+#     mydate = datetime(2021,10,1)
+#     get_final_table(mydate)
+#     sendImage()
     
 
 if __name__ == "__main__":
