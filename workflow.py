@@ -13,10 +13,13 @@ import os
 
 
 pd.options.mode.chained_assignment = None
+
+print(sys.getdefaultencoding)
 TELEGRAM_TOKEN = os.environ['TELEGRAM_TOKEN']
+MY_CHAT_ID = os.environ['MY_CHAT_ID']
+
 BASE_URL = "https://api.telegram.org/bot{}".format(TELEGRAM_TOKEN)
 
-MY_CHAT_ID = os.environ['MY_CHAT_ID']
 def get_kospis(mydate:datetime):  # ouput is [kospi,kospi_200] in floats
 
   headers = {
