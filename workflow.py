@@ -6,8 +6,9 @@ from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 import requests
 import dataframe_image as dfi
-import os 
-
+import os
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 
 
 pd.options.mode.chained_assignment = None
